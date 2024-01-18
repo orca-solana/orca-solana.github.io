@@ -1,0 +1,165 @@
+{
+  "settings": {
+    "name": "orca solana 2",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "titlePreset": "StartM5",
+      "styling": {
+        "primaryColor": "#9fe870",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffea64",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2.5,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": 1.2,
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      }
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.9.0",
+    "siteFonts": [],
+    "favicon": "@PROJECT_PATH@/assets/images/orca.ico",
+    "sitemapSwitcher": true,
+    "siteUrl": "https://orca-solana.github.io/",
+    "sitemapSwitcherAuto": "on",
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\nSitemap: https://orca-solana.github.io/sitemap.xml",
+    "mbrsiteDomain": "4wfy7h3r2e",
+    "imageResize": false,
+    "usedWebp": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "uniqCompNum": 2,
+    "versionPublish": "5.9.0"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Orca Solana™ | Home Official Site",
+        "meta_descr": "Orca is a decentralized exchange (DEX) and automated market maker (AMM) protocol on Solana with a focus on capital efficiency and human-centered design.",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".row": {
+              "flex-direction": "row-reverse"
+            }
+          },
+          "_name": "image01",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"2\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"11\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <div class=\"image-wrapper mb-4\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/orca.png\" alt=\"orca solana\">\n        </div>\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\"><b>Orca Solana™ | Home Official Site</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          Unleash your creativity and sew your way to endless possibilities.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1I1p8v1so",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {},
+          "_anchor": "image01-0"
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
+              }
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
+            },
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
+            }
+          },
+          "_name": "article07",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article07\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\"><b>Orca Solana: Revolutionizing DeFi on Solana's High-Speed Blockchain</b></h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Introduction</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Decentralized Finance (DeFi) has witnessed exponential growth over the past few years, bringing a new wave of financial innovation to the blockchain space. Among the emerging players in the DeFi realm, <a href=\"https://orca-solana.github.io/\" class=\"text-primary\">Orca</a> stands out as a pioneering platform built on the Solana blockchain. Leveraging Solana's high-speed and low-cost infrastructure, Orca Solana is transforming the DeFi landscape by offering users a seamless, efficient, and secure experience. In this article, we will delve into the features, benefits, and the potential impact of <a href=\"https://www.orca.so/\" class=\"text-primary\">Orca</a> Solana in revolutionizing DeFi on the Solana blockchain.\n<br>\n<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Understanding Orca Solana</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Orca Solana is a decentralized exchange (DEX) and liquidity aggregator built on the Solana blockchain. As a DEX, Orca enables users to trade tokens directly from their wallets, providing a non-custodial and permissionless trading experience. The platform also serves as a liquidity aggregator, consolidating liquidity from multiple sources to offer users the best possible prices for their trades.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>The Power of Solana Blockchain</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Orca Solana's strength lies in its choice to build on the Solana blockchain. Solana is a high-performance blockchain known for its scalability, low transaction fees, and lightning-fast transaction speeds. By leveraging Solana's capabilities, Orca Solana provides users with a seamless and efficient DeFi experience.<br><br>The Solana blockchain's unique architecture, featuring a Proof-of-History (PoH) consensus mechanism and a network of high-performance validators, enables Orca to process thousands of transactions per second with sub-second confirmation times. This scalability ensures that users can execute trades swiftly and take advantage of market opportunities without worrying about network congestion or high fees.<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Key Features and Benefits of Orca Solana</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Orca Solana offers several notable features and benefits that contribute to its appeal and potential impact within the DeFi ecosystem:<br><br>a. User-Friendly Interface: Orca's intuitive user interface makes it easy for both beginners and experienced traders to navigate the platform. The user-friendly design ensures a seamless experience, allowing users to trade, provide liquidity, and access other DeFi services effortlessly.\n<br>\n<br>b. Low Transaction Costs: Solana's low transaction fees translate to cost-effective trading and interaction with the Orca platform. Users can execute trades and manage their assets without worrying about exorbitant gas fees that are often associated with other blockchain networks.\n<br>\n<br>c. Efficient Liquidity Aggregation: Orca Solana leverages its liquidity aggregator to source liquidity from various decentralized exchanges and provide users with the best prices for their trades. This aggregation leads to improved liquidity depth and reduced slippage, enhancing the overall trading experience.\n<br>\n<br>d. Staking and Yield Opportunities: Orca Solana offers users the ability to stake their assets and earn rewards. By participating in Orca's liquidity pools, users can contribute to the platform's liquidity and earn yield in the process. This incentivizes users to actively participate in the ecosystem and provides an opportunity to earn passive income.\n<br>\n<br>e. Security and Trustworthiness: Orca Solana prioritizes security and user protection. The platform undergoes rigorous security audits and employs industry-standard security measures to safeguard user funds. Additionally, Orca Solana's non-custodial nature ensures that users have full control over their assets at all times.&nbsp;<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>The Impact of Orca Solana on DeFi&nbsp;</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Orca Solana's emergence has significant implications for the DeFi ecosystem, particularly within the Solana blockchain:<br><br>a. Scalability and Speed: By building on Solana, Orca demonstrates the potential of Solana's high-performance blockchain in supporting scalable and fast DeFi applications. As more projects leverage Solana's capabilities, the entire DeFi ecosystem benefits from increased scalability and reduced transaction times.\n<br>\n<br>b. Improved Accessibility: Orca Solana's user-friendly interface and low transaction costs make DeFi more accessible to a broader audience. The platform lowers barriers to entry, allowing users with varying levels of technical expertise to participate in decentralized trading and yield opportunities.\n<br>\n<br>c. Liquidity Enhancement: Orca Solana's liquidity aggregation feature improves liquidity depth and reduces slippage for traders. By consolidating liquidity from different sources, Orca Solana contributes to a more efficient and liquid market, attracting more market participants and fostering increased trading activity.\n<br>\n<br>d. Solana Ecosystem Growth: Orca's presence and success on the Solana blockchain contribute to the overall growth and development of the Solana ecosystem. As more projects build and integrate with Solana, the network's utility and value increase, establishing it as a prominent player in the DeFi space.\n<br>\n<br>&nbsp;e. Innovation Catalyst: Orca Solana's innovative approach to decentralized trading and liquidity aggregation inspires other projects to explore new possibilities within the DeFi sector. The platform's success serves as a catalyst for further innovation, encouraging the development of novel DeFi protocols and services on Solana and beyond.<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Conclusion</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Orca Solana is at the forefront of revolutionizing DeFi on the Solana blockchain. By harnessing Solana's high-speed and low-cost infrastructure, Orca offers users a seamless and efficient trading experience, backed by the security and trustworthiness of decentralized finance. With its user-friendly interface, liquidity aggregation, and yield opportunities, Orca Solana enhances accessibility and liquidity within the DeFi ecosystem.\n<br>\n<br>As the Solana blockchain continues to gain traction and establish itself as a leading platform for decentralized applications, Orca Solana's impact on DeFi is poised to grow significantly. Its scalability, speed, and innovative features make it an attractive option for traders and liquidity providers, while also fueling further innovation within the Solana ecosystem.\n<br>\n<br>With Orca Solana paving the way for efficient and secure decentralized trading, the future of DeFi on the Solana blockchain looks promising. As more users and projects flock to Orca Solana, the platform's influence will continue to reshape and redefine the possibilities of decentralized finance, unlocking new opportunities and driving the adoption of DeFi principles on a global scale.<br></p>\n              </div>\n            </div>\n          </div>\n          <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n            <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1I1rsh22U",
+          "_anchor": "article07-1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
